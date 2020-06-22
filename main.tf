@@ -243,6 +243,7 @@ resource "aws_instance" "jenkins-01" {
 
 resource "aws_db_instance" "oracle" {
   allocated_storage      = 50
+  allow_major_version_upgrade = true
   engine                 = "oracle-ee"
   engine_version         = "12.1.0.2.v20"
   instance_class         = "db.m5.large"
