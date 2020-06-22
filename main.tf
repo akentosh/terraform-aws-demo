@@ -229,9 +229,22 @@ resource "aws_instance" "jenkins-01" {
 ###################
 # Database Instance
 ###################
-resource "aws_db_instance" "default" {
-  allocated_storage      = 10
-  engine                 = "mysql"
+# resource "aws_db_instance" "default" {
+#   allocated_storage      = 10
+#   engine                 = "mysql"
+#   instance_class         = "db.t2.micro"
+#   name                   = "${var.user}DemoDB"
+#   username               = var.aws_instance_username
+#   password               = var.aws_instance_password
+#   vpc_security_group_ids = [aws_security_group.default.id]
+#   db_subnet_group_name   = module.vpc.database_subnet_group
+#   skip_final_snapshot    = true
+# }
+
+resource "aws_db_instance" "oracle" {
+  allocated_storage      = 50
+  engine                 = "oracle-ee"
+  engine_version         = "12.1.0.2.v20"
   instance_class         = "db.t2.micro"
   name                   = "${var.user}DemoDB"
   username               = var.aws_instance_username
@@ -240,4 +253,3 @@ resource "aws_db_instance" "default" {
   db_subnet_group_name   = module.vpc.database_subnet_group
   skip_final_snapshot    = true
 }
-
