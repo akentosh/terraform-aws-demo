@@ -245,7 +245,7 @@ resource "aws_db_instance" "oracle" {
   allocated_storage      = 50
   engine                 = "oracle-ee"
   engine_version         = "12.1.0.2.v19"
-  # instance_class         = "db.t2.large"
+  instance_class         = "db.m5.large"
   name                   = "${var.user}DemoDB"
   username               = var.aws_instance_username
   password               = var.aws_instance_password
