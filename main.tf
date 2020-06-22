@@ -246,7 +246,7 @@ resource "aws_db_instance" "oracle" {
   engine                 = "oracle-ee"
   engine_version         = "12.1.0.2.v19"
   instance_class         = "db.m5.large"
-  name                   = "${var.user}DemoDB"
+  name                   = "${var.user}"
   username               = var.aws_instance_username
   password               = var.aws_instance_password
   vpc_security_group_ids = [aws_security_group.default.id]
