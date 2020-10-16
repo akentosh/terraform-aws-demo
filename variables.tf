@@ -12,7 +12,7 @@ variable "private_key" {
 
 variable "key_name" {
   description = "Desired name of AWS key pair"
-  default     = "mtharpe-demo-terraform"
+  default     = "demo-terraform"
 }
 
 variable "aws_region" {
